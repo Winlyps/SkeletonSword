@@ -1,0 +1,5 @@
+name: SkeletonSword
+version: '1.0-SNAPSHOT'
+main: winlyps.skeletonSword.SkeletonSword
+api-version: '1.20'
+authors: [ Winlyps ]
