@@ -3,3 +3,15 @@ version: '1.0-SNAPSHOT'
 main: winlyps.skeletonSword.SkeletonSword
 api-version: '1.16'
 authors: [ Winlyps ]
+
+commands:
+  skeletonswordreload:
+    description: Reloads the SkeletonSword plugin configuration
+    usage: /skeletonswordreload
+    permission: skeletonsword.reload
+    aliases: [ssreload]
+
+permissions:
+  skeletonsword.reload:
+    description: Allows reloading the SkeletonSword configuration
+    default: op

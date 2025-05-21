@@ -1,0 +1,17 @@
+# SkeletonSword Configuration
+
+# Custom damage values for each sword type
+# Default values are approximately half of the normal weapon damage
+weapon-damage:
+  wooden_sword: 2.0   # Default: 4 damage
+  stone_sword: 2.5    # Default: 5 damage
+  iron_sword: 3.0     # Default: 6 damage
+  golden_sword: 2.0   # Default: 4 damage
+  diamond_sword: 3.5  # Default: 7 damage
+  netherite_sword: 4.0 # Default: 8 damage
+
+# Whether to apply the damage multiplier
+enable-custom-damage: true
+
+# Debug mode - prints additional information to console
+debug: false
