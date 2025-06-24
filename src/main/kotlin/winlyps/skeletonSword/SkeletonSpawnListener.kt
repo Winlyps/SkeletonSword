@@ -1,8 +1,7 @@
 package winlyps.skeletonSword
 
 import org.bukkit.Material
-import org.bukkit.entity.EntityType
-import org.bukkit.entity.Skeleton
+import org.bukkit.entity.AbstractSkeleton
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDeathEvent
@@ -16,8 +15,8 @@ class SkeletonSpawnListener(private val plugin: SkeletonSword) : Listener {
 
     @EventHandler
     fun onEntitySpawn(event: EntitySpawnEvent) {
-        if (event.entityType == EntityType.SKELETON) {
-            val skeleton = event.entity as Skeleton
+        if (event.entity is AbstractSkeleton) {
+            val skeleton = event.entity as AbstractSkeleton
             val randomSword = getRandomSword()
             skeleton.equipment?.setItemInMainHand(ItemStack(randomSword))
             skeleton.equipment?.helmet = null
@@ -41,9 +40,9 @@ class SkeletonSpawnListener(private val plugin: SkeletonSword) : Listener {
 
     @EventHandler
     fun onEntityDeath(event: EntityDeathEvent) {
-        if (event.entityType == EntityType.SKELETON) {
+        if (event.entity is AbstractSkeleton) {
             event.drops.removeIf { it.type == Material.BOW || it.type == Material.ARROW }
-            val skeleton = event.entity as Skeleton
+            val skeleton = event.entity as AbstractSkeleton
             val mainHandItem = skeleton.equipment?.itemInMainHand
             if (mainHandItem != null && mainHandItem.type.name.endsWith("_SWORD")) {
                 val brokenSword = ItemStack(mainHandItem.type, 1)
