@@ -17,4 +17,7 @@ The Durability of dropped swords is between 5-15, here are the chances for skele
 - Required permission to use these commands: ```skeletonsword.reload```
 - Players with op (/op nickname) have this required permission by default.
 
+**1.0.2 Update!**
+- Added Strays and Bogged
+
 - Check out other plugins: https://modrinth.com/user/Winlyps
